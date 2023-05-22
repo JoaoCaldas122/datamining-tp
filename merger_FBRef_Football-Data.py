@@ -41,6 +41,7 @@ for ano in anos:
     fd = fd[['HomeTeam','AwayTeam','HS','AS','HST','AST','B365H','B365D','B365A']]
     
     new_df = pd.merge(df, fd,  how='left', left_on=['home','away'], right_on = ['HomeTeam','AwayTeam'])
+    new_df.drop(['HomeTeam', 'AwayTeam'], inplace=True, axis=1)
     
     new_df.to_csv(f'merged/merged_{ano}.csv',index=False)
     
