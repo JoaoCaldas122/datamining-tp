@@ -40,7 +40,7 @@ for ano in anos:
     
     new_df = pd.merge(df, fd,  how='left', left_on=['home','away'], right_on = ['HomeTeam','AwayTeam'])
     
-    new_df.to_csv(f'merged_{ano}.csv',index=False)
+    new_df.to_csv(f'merged/merged_{ano}.csv',index=False)
     
     
 '''
