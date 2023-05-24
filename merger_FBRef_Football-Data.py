@@ -38,7 +38,7 @@ for ano in anos:
     df['home'] = df['home'].replace(conversao)
     df['away'] = df['away'].replace(conversao)
      
-    fd = fd[['HomeTeam','AwayTeam','HS','AS','HST','AST','B365H','B365D','B365A']]
+    fd = fd[['HomeTeam','AwayTeam','HS','AS','HST','AST','B365H','B365D','B365A','HTHG','HTAG']]
     
     new_df = pd.merge(df, fd,  how='left', left_on=['home','away'], right_on = ['HomeTeam','AwayTeam'])
     new_df.drop(['HomeTeam', 'AwayTeam'], inplace=True, axis=1)
