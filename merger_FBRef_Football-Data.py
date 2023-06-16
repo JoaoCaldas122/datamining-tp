@@ -45,6 +45,21 @@ for ano in anos:
     
     new_df.to_csv(f'merged/merged_{ano}.csv',index=False)
     
+df1 = pd.read_csv('merged/merged_201819.csv')
+df2 = pd.read_csv('merged/merged_201920.csv')
+df3 = pd.read_csv('merged/merged_202021.csv')
+df4 = pd.read_csv('merged/merged_202122.csv')
+df5 = pd.read_csv('merged/merged_202223.csv')
+
+df1['season'] = 2019
+df2['season'] = 2020
+df3['season'] = 2021
+df4['season'] = 2022
+df5['season'] = 2023
+
+df6 = pd.concat([df1,df2,df3,df4,df5])
+
+df6.to_csv('merged_treinofinaltudo.csv', index=False)
     
 '''
 ##### Descobrir as diferenças nos nomes das equipas entre ambos os datasets
